@@ -1,0 +1,33 @@
+//branding colors
+
+$color-light-pink: #fedae4;
+$color-pink: #810424;
+
+$color-font-green: #223c24;
+$color-secondary-green: #447948;
+$inputFont: #9ec8a2;
+
+//texturas
+$color-error: rgb(209, 11, 11);
+$color-success: rgb(91, 183, 91);
+
+//tipografia
+
+$basefont: 'Mulish', sans-serif, roboto;
+$secondaryFont: 'Noto Serif', serif, roboto;
+$baseFontSize: 16px;
+
+$buttoncolorbackground: $color-light-pink;
+$buttoncolor: $color-pink;
+
+//constantes
+$border-radius: 20px;
+
+//arrays
+
+$fs: (
+  big: 40px,
+  normal: 36px,
+  small: 25px,
+  x-small: 21px,
+);
