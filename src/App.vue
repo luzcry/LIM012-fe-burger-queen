@@ -25,5 +25,6 @@ export default {
 #app {
   @import "./assets/scss/_variables.scss";
   background-image: url("~@/assets/background.svg");
+  height: 100vh;
 }
 </style>

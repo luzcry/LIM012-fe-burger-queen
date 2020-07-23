@@ -25,7 +25,7 @@
           class="input"
           required
         />
-        <button type="submit" class="btn">Inicia sesión</button>
+        <btn title="Inicia sesión"></btn>
       </form>
       <div class="error" v-if="error">{{ error.message }}</div>
       <span class="account">
@@ -39,6 +39,7 @@
   </div>
 </template>
 <script>
+import btn from "../../components/btn";
 import { auth } from "../../../firebase.config";
 export default {
   name: "login",
@@ -48,6 +49,9 @@ export default {
       password: "",
       error: ""
     };
+  },
+  components: {
+    btn
   },
   methods: {
     async pressed() {
@@ -66,36 +70,39 @@ export default {
   }
 };
 </script>
-<style lang="sass" scoped>
+<style lang="sass">
 @import "../../assets/scss/_variables.scss";
 
-@media (min-width: 768px) and (max-width: 1023px)
+@media (min-width: 768px) and (max-width: 1280px)
   .container
+    height: 100vh;
     font-family: $secondaryFont;
     display: grid
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 50% 50%;
   .container-form
     width: 100%;
     display: flex;
     flex-direction: column;
     margin: 1rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+
   .title
     color: $color-font-green;
     font-style: $secondaryFont;
     margin-bottom: 2rem;
+    font-size: 22px;
   .account
     color: $color-secondary-green;
   .link
     text-decoration: none;
     font-weight: bolder;
     color: $color-font-green;
+    cursor: pointer;
   .input
-    width: 50%;
     border-style: none;
     border-bottom: 2px solid $color-secondary-green;
-    margin-bottom: 2rem;
+    margin: 1rem;
   ::placeholder
     color: $inputFont;
     font-family: $basefont;
@@ -104,4 +111,7 @@ export default {
   .input:active
     outline: none;
   .imgLogin
+    display: grid;
+    align-items: center;
+    width: 300px;
 </style>
