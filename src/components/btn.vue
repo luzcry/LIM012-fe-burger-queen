@@ -1,5 +1,5 @@
 <template>
-  <button class="btn">{{ title }}</button>
+  <button v-on:click="onClick" class="btn">{{ title }}</button>
 </template>
 
 <script>
@@ -7,6 +7,11 @@ export default {
   name: "btn",
   props: {
     title: String
+  },
+  methods: {
+    onClick: function() {
+      this.$emit("onClick");
+    }
   }
 };
 </script>
@@ -25,4 +30,7 @@ export default {
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+.btn:focus
+  outline-color: transparent;
+  outline-style: none;
 </style>

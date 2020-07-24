@@ -1,9 +1,15 @@
 <template>
   <div class="container">
     <div class="container-form">
-      <form @submit.prevent="pressed" name="loginRegister" class="container-form">
-        <label for="formLogin" class="title">¡Registrate al sistema de pedidos de Valhalla's burger!</label>
-        <input
+      <form
+        @submit.prevent="pressed"
+        name="loginRegister"
+        class="container-form"
+      >
+        <label for="formLogin" class="title"
+          >¡Registrate al sistema de pedidos de Valhalla's burger!</label
+        >
+        <!-- <input
           type="text"
           name="userName"
           id="userName"
@@ -11,13 +17,25 @@
           v-model="userName"
           class="input"
           required
+        />-->
+        <input
+          class="input"
+          type="email"
+          v-model="email"
+          placeholder="E-mail"
+          required
         />
-        <input class="input" type="email" v-model="email" placeholder="E-mail" required />
-        <input class="input" type="password" v-model="password" placeholder="Contraseña" required />
+        <input
+          class="input"
+          type="password"
+          v-model="password"
+          placeholder="Contraseña"
+          required
+        />
         <div class="optionArea">
           <span class="title">Elige tu área</span>
           <div class="imageOptions">
-            <div>
+            <div class="optionRegister">
               <img
                 class="imageSizeHat"
                 src="../../assets/register/cookHatKitchen.svg"
@@ -25,8 +43,12 @@
               />
               <p>COCINA</p>
             </div>
-            <div>
-              <img class="imageSizeWaiter" src="../../assets/register/waitress.svg" alt="waiter" />
+            <div class="optionRegister">
+              <img
+                class="imageSizeWaiter"
+                src="../../assets/register/waitress.svg"
+                alt="waiter"
+              />
               <p>MESAS</p>
             </div>
           </div>
@@ -39,25 +61,25 @@
       </span>
     </div>
     <div class="register">
-      <img class="imgRegister" src="../../assets/register/burgerRegister.svg" alt="image login" />
+      <img
+        class="imgRegister"
+        src="../../assets/register/burgerRegister.svg"
+        alt="image login"
+      />
     </div>
     <div v-if="error" class="error">{{ error.message }}</div>
   </div>
 </template>
 
 <script>
-import { auth } from "../../../firebase.config";
+import { createUser } from "../../data/auth";
 import btn from "../../components/btn";
 
 export default {
   methods: {
     async pressed() {
       try {
-        const user = await auth.createUserWithEmailAndPassword(
-          this.email,
-          this.password
-        );
-        console.log(user);
+        await createUser(this.email, this.password);
         this.$router.replace({ name: "login" });
       } catch (err) {
         console.log(err);
@@ -96,5 +118,11 @@ export default {
   .imageOptions
     display: flex;
     flex-direction: row;
+    align-items: center;
+  .optionRegister
+    color: $color-font-green;
+    font-family: $basefont;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 </style>

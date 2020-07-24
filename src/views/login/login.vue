@@ -1,14 +1,8 @@
 <template>
   <div class="container">
     <div class="container-form">
-      <form
-        @submit.prevent="pressed"
-        name="loginRegister"
-        class="container-form"
-      >
-        <label for="formLogin" class="title"
-          >¡Bienvenidx al sistema de pedidos de Valhalla's burger!</label
-        >
+      <form @submit.prevent="pressed" name="loginRegister" class="container-form">
+        <label for="formLogin" class="title">¡Bienvenidx al sistema de pedidos de Valhalla's burger!</label>
         <input
           type="email"
           name="email"
@@ -40,7 +34,7 @@
 </template>
 <script>
 import btn from "../../components/btn";
-import { auth } from "../../../firebase.config";
+import { loginUser } from "../../data/auth";
 export default {
   name: "login",
   data() {
@@ -56,12 +50,7 @@ export default {
   methods: {
     async pressed() {
       try {
-        console.log(this.password);
-        const signIn = await auth.signInWithEmailAndPassword(
-          this.email,
-          this.password
-        );
-        console.log(signIn);
+        await loginUser(this.email, this.password);
         this.$router.replace({ name: "listOfOrders" });
       } catch (err) {
         console.log(err);
@@ -89,9 +78,11 @@ export default {
 
   .title
     color: $color-font-green;
-    font-style: $secondaryFont;
+    font-family: $secondaryFont;
     margin-bottom: 2rem;
     font-size: 22px;
+    display: flex;
+    align-self: center;
   .account
     color: $color-secondary-green;
   .link

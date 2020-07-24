@@ -4,7 +4,7 @@ import register from "../views/register/register";
 import menu from "../views/menu/menu";
 import kitchen from "../views/kitchen/kitchen";
 import listOfOrders from "../views/listOfOrders/listOfOrders";
-import { auth } from "../../firebase.config";
+import { getCurrentUser } from "../data/auth";
 
 const routes = [
   {
@@ -34,7 +34,7 @@ const routes = [
   },
   {
     path: "/listOfOrders",
-    name: "list of orders",
+    name: "listOfOrders",
     component: listOfOrders,
     meta: { requiresAuth: true }
   }
@@ -46,10 +46,9 @@ export const router = new VueRouter({
   routes
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  const isAuthenticated = auth.currentUser;
-  if (requiresAuth && !isAuthenticated) {
+  if (requiresAuth && !(await getCurrentUser())) {
     next("/login");
   } else {
     next();

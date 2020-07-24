@@ -1,47 +1,54 @@
-<!--<template>
-  <div>
-    logged in
-    <span v-if="loggedIn">yes</span>
-    <span v-else>No</span>
-    <div>
-      <button @click="signOut">Cerrar sesión</button>
+<template>
+  <div class="container-header">
+    <div class="header-left">
+      <p>Valhalla's Burger</p>
+      <p>¡Del paraíso a tu paladar!</p>
+      <p>Nombre del mesonerx:</p>
+      <p>Hora</p>
+    </div>
+    <div class="header-right">
+      <img class="logo" src="../assets/logogreen.svg" alt="logo" />
+      <btn @onClick="signOut" title="Cerrar sesión"></btn>
     </div>
   </div>
 </template>
 
 <script>
-import { auth } from "../../firebase.config";
+import { logOut } from "../data/auth";
+import btn from "./btn";
 export default {
   name: "top-header",
-  mounted() {
-    this.setupFiresbase();
+
+  components: {
+    btn
   },
   methods: {
-    setupFiresbase() {
-      auth.onAuthStateChanged(user => {
-        //this.loggedIn = !!user;
-        if (user) {
-          this.loggedIn = true;
-        } else {
-          this.logged = false;
-        }
-      });
-    },
-    async signOut() {
+    signOut: function() {
+      console.log("coño");
       try {
-        const data = await auth.signOut();
-        console.log(data);
-        this.$router.replace({ name: "listOfOrders" });
+        logOut();
+        this.$router.replace({ name: "login" });
       } catch (err) {
         console.log(err);
       }
     }
-  },
+  }
 
-  data() {
+  /* data() {
     return {
       loggedIn: false
     };
-  }
+  }*/
 };
-</script> -->
+</script>
+@import "../assets/scss/_variables.scss";
+<style lang="sass">
+.container-header
+  display: flex;
+.header-right
+  display: flex;
+  flex-direction: column;
+.header-left
+  color: $color-font-green;
+  font-size: small;
+</style>
