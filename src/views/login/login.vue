@@ -68,6 +68,7 @@ export default {
     font-family: $secondaryFont;
     display: grid
     grid-template-columns: 50% 50%;
+
   .container-form
     width: 100%;
     display: flex;
@@ -83,25 +84,32 @@ export default {
     font-size: 22px;
     display: flex;
     align-self: center;
+
   .account
     color: $color-secondary-green;
+
   .link
     text-decoration: none;
     font-weight: bolder;
     color: $color-font-green;
     cursor: pointer;
+
   .input
     border-style: none;
     border-bottom: 2px solid $color-secondary-green;
     margin: 1rem;
     color: $color-font-green;
+
   ::placeholder
     color: $inputFont;
     font-family: $basefont;
+
   .input:focus
     outline: none;
+
   .input:active
     outline: none;
+
   .imgLogin
     display: grid;
     align-items: center;

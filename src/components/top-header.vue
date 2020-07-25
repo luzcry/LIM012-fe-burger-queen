@@ -46,10 +46,19 @@ export default {
 @import "../assets/scss/_variables.scss";
 .container-header
   display: flex;
+
 .header-right
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+
 .header-left
   color: $color-font-green;
-  font-size: small;
+  font-size: 22px;
+
+.header-left > p
+  margin: 2px;
+
+.logo
+  width: 150px;
 </style>
