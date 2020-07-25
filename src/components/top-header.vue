@@ -41,8 +41,9 @@ export default {
   }*/
 };
 </script>
-@import "../assets/scss/_variables.scss";
+
 <style lang="sass">
+@import "../assets/scss/_variables.scss";
 .container-header
   display: flex;
 .header-right

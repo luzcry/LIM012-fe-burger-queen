@@ -94,6 +94,7 @@ export default {
     border-style: none;
     border-bottom: 2px solid $color-secondary-green;
     margin: 1rem;
+    color: $color-font-green;
   ::placeholder
     color: $inputFont;
     font-family: $basefont;
