@@ -1,8 +1,14 @@
 <template>
   <div class="container">
     <div class="container-form">
-      <form @submit.prevent="pressed" name="loginRegister" class="container-form">
-        <label for="formLogin" class="title">¡Bienvenidx al sistema de pedidos de Valhalla's burger!</label>
+      <form
+        @submit.prevent="pressed"
+        name="loginRegister"
+        class="container-form"
+      >
+        <label for="formLogin" class="title"
+          >¡Bienvenidx al sistema de pedidos de Valhalla's burger!</label
+        >
         <input
           type="email"
           name="email"

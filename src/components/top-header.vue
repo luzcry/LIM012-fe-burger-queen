@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     signOut: function() {
-      console.log("coño");
       try {
         logOut();
         this.$router.replace({ name: "login" });
@@ -44,21 +43,22 @@ export default {
 
 <style lang="sass">
 @import "../assets/scss/_variables.scss";
-.container-header
-  display: flex;
+@media (min-width: 768px) and (max-width: 1280px)
+  .container-header
+    display: flex;
+    margin: 2rem;
+  .header-right
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
 
-.header-right
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
+  .header-left
+    color: $color-font-green;
+    font-size: 22px;
 
-.header-left
-  color: $color-font-green;
-  font-size: 22px;
+  .header-left > p
+    margin: 2px;
 
-.header-left > p
-  margin: 2px;
-
-.logo
-  width: 150px;
+  .logo
+    width: 140px;
 </style>

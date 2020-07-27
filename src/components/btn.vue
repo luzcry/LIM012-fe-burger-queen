@@ -27,7 +27,7 @@ export default {
   color: $color-pink;
   background-color: $color-light-pink;
   font-family: $secondaryFont;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
 .btn:focus

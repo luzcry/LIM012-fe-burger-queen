@@ -4,6 +4,7 @@ import register from "../views/register/register";
 import menu from "../views/menu/menu";
 import kitchen from "../views/kitchen/kitchen";
 import listOfOrders from "../views/listOfOrders/listOfOrders";
+import newOrder from "../views/newOrder/newOrder";
 import { getCurrentUser } from "../data/auth";
 
 const routes = [
@@ -11,6 +12,11 @@ const routes = [
     path: "/",
     name: "login",
     component: login
+  },
+  {
+    path: "/newOrder",
+    name: "newOrder",
+    component: newOrder
   },
   {
     path: "/login",
