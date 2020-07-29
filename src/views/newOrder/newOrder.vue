@@ -36,7 +36,7 @@ export default {
 
 @media (min-width: 768px) and (max-width: 1280px)
   .containerOrder
-    border: 1px $color-light-pink solid;
+    border: 2px $color-light-pink solid;
     color: $color-font-green;
     width: 70%;
     margin-left: auto;

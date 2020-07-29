@@ -44,7 +44,7 @@ export default {
           status: "Listo para entregar"
         },
         {
-          numberOfOrder: "pedido n°4",
+          numberOfOrder: "Pedido n°4",
           status: "Entregado"
         }
       ]
