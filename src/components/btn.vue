@@ -33,4 +33,7 @@ export default {
 .btn:focus
   outline-color: transparent;
   outline-style: none;
+.btn:active
+  outline-color: transparent;
+  outline-style: none;
 </style>

@@ -24,7 +24,7 @@
 </template>
 <script>
 import topheader from "../../components/top-header.vue";
-import cardItem from "../../views/cardItem/cardItem.vue";
+import cardItem from "./cardItem";
 export default {
   name: "listOfOrders",
   components: { "top-header": topheader, cardItem },
