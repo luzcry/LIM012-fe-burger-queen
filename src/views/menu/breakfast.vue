@@ -8,12 +8,16 @@
         <main-plate :item="items[2]" :key="items[2].name"></main-plate>
         <main-plate :item="items[3]" :key="items[3].name"></main-plate>
       </div>
+      <div>
+        <btn title="Enviar a resumen"></btn>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import mainPlate from "./mainPlate.vue";
+import btn from "../../components/btn.vue";
 
 const imgCoffee = require("@/assets/menu/coffee.svg");
 const imgSandwich = require("@/assets/menu/sandwich.svg");
@@ -22,7 +26,7 @@ const juice = require("@/assets/menu/juice.svg");
 
 export default {
   name: "breakfast",
-  components: { mainPlate },
+  components: { mainPlate, btn },
   data() {
     return {
       items: [

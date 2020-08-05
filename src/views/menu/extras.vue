@@ -32,22 +32,22 @@ export default {
 
 <style lang="sass">
 .imgExtras
-    width: 75px;
-    margin: 6px;
-    padding-left: 35px;
+  width: 65px;
+  margin: 6px;
+  padding-left: 35px;
 
 
 #imgPlus
-    margin-left: 9px;
-    margin-right: 10px;
+  margin-left: 9px;
+  margin-right: 10px;
 
 #imgCoin
-    width: 45px;
-    padding-top: 16px;
+  width: 45px;
+  padding-top: 16px;
 
 .extras
-    display: flex;
-    flex-direction: column;
-    padding-top: 5px;
-    margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  margin-left: 10px;
 </style>

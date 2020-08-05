@@ -2,7 +2,7 @@
   <div>
     <top-header></top-header>
     <div class="titleMenu">
-      <h1>Menú</h1>
+      <h1>MENÚ</h1>
       <img class="imgMenu" src="../../assets/menu/menu.png" alt="menu" />
     </div>
     <div class="containerMenu">

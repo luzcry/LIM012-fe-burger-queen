@@ -21,11 +21,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 25px;
-  color: $color-font-green;
+  margin: 15px;
+  color: $color-secondary-green
+  font-weight: bold;
   font-size: 18px;
   text-align: center;
+  font-family: $basefont;
 
 .imgItem
-  width: 80px;
+  width: 65px;
 </style>

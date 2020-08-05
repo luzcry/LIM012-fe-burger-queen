@@ -7,11 +7,15 @@
       <main-plate :item="items[2]" :key="items[2].name"></main-plate>
       <main-plate :item="items[3]" :key="items[3].name"></main-plate>
     </div>
+    <div>
+      <btn title="Enviar a resumen"></btn>
+    </div>
   </div>
 </template>
 
 <script>
 import mainPlate from "./mainPlate.vue";
+import btn from "../../components/btn.vue";
 
 const imgSodaCan = require("@/assets/menu/sodaCan500ml.png");
 const imgWater500ml = require("@/assets/menu/bottleWater500ml.png");
@@ -20,7 +24,7 @@ const imgCola700ml = require("@/assets/menu/cola700ml.png");
 
 export default {
   name: "drinks",
-  components: { mainPlate },
+  components: { mainPlate, btn },
   data() {
     return {
       items: [

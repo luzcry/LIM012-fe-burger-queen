@@ -20,6 +20,7 @@
 const imgChickenBurger = require("@/assets/menu/chicken-leg.svg");
 const imgVeggieBurger = require("@/assets/menu/veggieBurger.svg");
 const imgMeatBurger = require("@/assets/menu/meat.svg");
+
 export default {
   name: "typeBurgers",
   components: {},
@@ -48,26 +49,29 @@ export default {
 @import "../../assets/scss/_variables";
 
 .titleTypesburgers
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 
 #types
-    display: flex;
-    margin: 10px;
-    font-size: 18px;
+  display: flex;
+  margin: 10px;
+  font-size: 18px;
 
 .typeBurgers
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    color: $color-font-green;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: $color-font-green;
 
 .eachType
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 15px;
-    font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 15px;
+  font-size: 18px;
+  color: $color-secondary-green
+  font-weight: bold;
+  font-family: $basefont;
 </style>

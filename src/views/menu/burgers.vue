@@ -15,6 +15,9 @@
     <div class="typeBurgers">
       <typeBurgers></typeBurgers>
     </div>
+    <div>
+      <btn title="Enviar a resumen"></btn>
+    </div>
   </div>
 </template>
 
@@ -22,13 +25,14 @@
 import mainPlate from "./mainPlate.vue";
 import extras from "./extras.vue";
 import typeBurgers from "./typeBurgers.vue";
+import btn from "../../components/btn.vue";
 
 const imgSimpleBurger = require("@/assets/menu/simpleBurger.svg");
 const imgDoubleBurger = require("@/assets/menu/doubleBurger.svg");
 
 export default {
   name: "burgers",
-  components: { mainPlate, extras, typeBurgers },
+  components: { mainPlate, extras, typeBurgers, btn },
   data() {
     return {
       items: [
