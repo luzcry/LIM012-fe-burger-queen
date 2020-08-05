@@ -9,14 +9,21 @@
       <btn @onClick="changeIndex(3)" title="Bebidas"></btn>
     </div>
     <breakfast v-if="index == 0"></breakfast>
+    <burgers v-if="index == 1"></burgers>
+    <added v-if="index == 2"></added>
+    <drinks v-if="index == 3"></drinks>
   </div>
 </template>
 <script>
 import btn from "../../components/btn";
 import breakfast from "./breakfast.vue";
+import burgers from "./burgers.vue";
+import added from "./added.vue";
+import drinks from "./drinks.vue";
+
 export default {
   name: "btnsMenu",
-  components: { btn, breakfast },
+  components: { btn, breakfast, burgers, added, drinks },
   data() {
     return {
       index: 0
@@ -29,3 +36,4 @@ export default {
   }
 };
 </script>
+<style lang="sass"></style>

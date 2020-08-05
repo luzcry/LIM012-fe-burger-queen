@@ -71,7 +71,7 @@ export default {
 @media (min-width: 768px) and (max-width: 1280px)
   .container-header
     display: flex;
-    margin: 2rem;
+    margin: 1rem;
   .header-right
     display: flex;
     flex-direction: column;

@@ -18,6 +18,7 @@ export default {
 
 <style lang="sass">
 @import "../assets/scss/_variables.scss";
+
 .btn
   border: none
   border-radius: 20px;
@@ -27,13 +28,16 @@ export default {
   color: $color-pink;
   background-color: $color-light-pink;
   font-family: $secondaryFont;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+
 .btn:focus
   outline-color: transparent;
   outline-style: none;
+
 .btn:active
   outline-color: transparent;
   outline-style: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 </style>

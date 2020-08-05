@@ -6,7 +6,12 @@
       <img class="imgMenu" src="../../assets/menu/menu.png" alt="menu" />
     </div>
     <div class="containerMenu">
-      <btnsMenu></btnsMenu>
+      <div>
+        <btns-menu></btns-menu>
+      </div>
+      <div class="containerResume">
+        <resume-order></resume-order>
+      </div>
     </div>
   </div>
 </template>
@@ -14,10 +19,11 @@
 <script>
 import topheader from "../../components/top-header.vue";
 import btnsMenu from "./btnsMenu.vue";
+import resumeOrder from "./resumeOrder.vue";
 
 export default {
   name: "menu",
-  components: { "top-header": topheader, btnsMenu }
+  components: { "top-header": topheader, btnsMenu, resumeOrder }
 };
 </script>
 
@@ -33,64 +39,24 @@ export default {
     font-famiy: $secondaryFont;
     font-size: 18px;
 
-    .imgMenu
-      padding-left: 10px;
-      width: 55px;
-      height: 70px;
+  .imgMenu
+    padding-left: 10px;
+    width: 55px;
+    height: 70px;
 
-    .containerMenu
-      display: grid;
-      grid-template-columns: 50% 50%
-      justify-content: center;
-      align-content: center;
-      margin: 2rem;
+  .containerMenu
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
 
-    .containerResume
-      width: 100%;
-      display: flex;
-      flex-direction: column;
+  .item
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 
-    .resumeOrder
-      color: $color-pink;
-      font-family: $secondaryFont;
-      display: flex;
-      justify-content: center;
-      font-size: 23px;
-      border: 2px $color-light-pink solid;
-      padding: 10px;
-
-    .resumeTitles
-      color: $color-secondary-green;
-      font-size: 12px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr)
-
-    .eachTitleResume
-      margin: 10px;
-      justify-self: center;
-      font-size: medium;
-      font-height: bold;
-
-    #titleResume
-      margin-left: auto;
-      margin-right: auto;
-
-    .containerItems
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-    .imgItems
-      width: 70px;
-      height: 70px;
-
-    .item
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-
-    .breakfast
-      display: flex;
-      align-self: center;
-      flex-direction: column;
+  .breakfast
+    display: flex;
+    align-self: center;
+    flex-direction: column;
 </style>
