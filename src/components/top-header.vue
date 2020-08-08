@@ -1,9 +1,13 @@
 <template>
   <div class="container-header">
-    <div class="header-left">
+    <div>
+      <img class="logo" src="../assets/logogreen.svg" alt="logo" />
+    </div>
+    <div>
       <p>Valhalla's Burger</p>
       <p>¡Del paraíso a tu paladar!</p>
-      <p>Nombre del mesonerx:</p>
+    </div>
+    <div>
       <p>
         Fecha:
         <span>{{ dateOnly }}</span>
@@ -13,9 +17,8 @@
         <span>{{ timestamp }}</span>
       </p>
     </div>
-    <div class="header-right">
-      <img class="logo" src="../assets/logogreen.svg" alt="logo" />
-      <btn @onClick="signOut" title="Cerrar sesión"></btn>
+    <div id="btnHeader">
+      <btn id="btnLogOut" @onClick="signOut" title="Cerrar sesión"></btn>
     </div>
   </div>
 </template>
@@ -68,23 +71,28 @@ export default {
 
 <style lang="sass">
 @import "../assets/scss/_variables.scss";
+
 @media (min-width: 768px) and (max-width: 1280px)
+
   .container-header
     display: flex;
     margin: 1rem;
-  .header-right
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    align-items: center;
+    justify-content: space-around;
+    font-family: $secondaryFont;
+    color: $color-font-green;
+    font-size: 18px;
 
   .header-left
-    color: $color-font-green;
-    font-size: 22px;
-
-  .header-left > p
-    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
   .logo
-    width: 140px;
+    width: 100px;
+
+  #btnLogOut
+    font-size: 13px;
+
+  #btnHeader
+    align-self: center;
 </style>

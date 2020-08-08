@@ -1,14 +1,10 @@
 <template>
   <div id="app">
     <link
-      href="https://fonts.googleapis.com/css2?family=Mulish&family=Noto+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gudea:ital@1&family=Lemonada&family=Varela+Round&display=swap"
       rel="stylesheet"
     />
-    <!-- <router-link to="/login">Inicia sesión</router-link>
-    <router-link to="/register">Registrate</router-link>
-    <router-link to="/menu">Menu</router-link>
-    <router-link to="/kitchen">Cocina</router-link>
-    <router-link to="/listOfOrders">Lista de ordenes</router-link>-->
+
     <router-view></router-view>
   </div>
 </template>

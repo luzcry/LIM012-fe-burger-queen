@@ -36,7 +36,7 @@ export default {
     justify-content: center;
     align-self: center;
     color: $color-font-green;
-    font-famiy: $secondaryFont;
+    font-family: $basefont;
     font-size: 18px;
 
   .imgMenu
