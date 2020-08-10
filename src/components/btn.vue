@@ -23,7 +23,7 @@ export default {
   border: none
   border-radius: 20px;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: $color-pink;
   background-color: $color-light-pink;

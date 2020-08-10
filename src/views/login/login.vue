@@ -1,14 +1,8 @@
 <template>
   <div class="container">
     <div class="container-form">
-      <form
-        @submit.prevent="pressed"
-        name="loginRegister"
-        class="container-form"
-      >
-        <label for="formLogin" class="title"
-          >¡Bienvenidx al sistema de pedidos de Valhalla's burger!</label
-        >
+      <form @submit.prevent="pressed" name="loginRegister" class="container-form">
+        <label for="formLogin" class="title">¡Bienvenidx al sistema de pedidos de Valhalla's burger!</label>
         <input
           type="email"
           name="email"
@@ -81,17 +75,18 @@ export default {
     flex-direction: column;
     margin: 1rem;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
   .title
     color: $color-font-green;
     font-family: $secondaryFont;
-    margin-bottom: 2rem;
+    margin: 20px;
     font-size: 22px;
-    align-self: center;
+    text-align: center;
 
   .account
     color: $color-secondary-green;
+    margin: 20px;
 
   .link
     text-decoration: none;
@@ -102,7 +97,7 @@ export default {
   .input
     border-style: none;
     border-bottom: 2px solid $color-secondary-green;
-    margin: 1rem;
+    margin: 20px;
     color: $color-font-green;
 
   ::placeholder
@@ -118,5 +113,6 @@ export default {
   .imgLogin
     display: grid;
     align-items: center;
-    width: 300px;
+    justify-self: center;
+    width: 320px;
 </style>
