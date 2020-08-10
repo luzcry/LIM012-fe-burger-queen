@@ -7,6 +7,16 @@
       <p>Valhalla's Burger</p>
       <p>¡Del paraíso a tu paladar!</p>
     </div>
+    <div v-if="isActive" class="titleMenu">
+      <h1>{{ title }}</h1>
+      <img class="imgMenu" v-if="title == 'MENÚ'" src="../assets/menu/menu.png" alt="MENÚ" />
+      <img
+        class="imgMenu"
+        v-if="title == 'COCINA'"
+        src="../assets/listsOfOrders/chefKitchen.svg"
+        alt="COCINA"
+      />
+    </div>
     <div>
       <p>
         Fecha:
@@ -31,6 +41,10 @@ export default {
 
   components: {
     btn
+  },
+  props: {
+    title: String,
+    isActive: Boolean
   },
   methods: {
     signOut: function() {
@@ -70,29 +84,29 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../assets/scss/_variables.scss";
+@import "../assets/scss/_variables.scss"
 
 @media (min-width: 768px) and (max-width: 1280px)
 
   .container-header
-    display: flex;
-    margin: 1rem;
-    justify-content: space-around;
-    font-family: $secondaryFont;
-    color: $color-font-green;
-    font-size: 18px;
+    display: flex
+    margin: 2rem
+    justify-content: space-around
+    font-family: $secondaryFont
+    color: $color-font-green
+    font-size: 18px
 
   .header-left
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex
+    flex-direction: column
+    align-items: center
 
   .logo
-    width: 100px;
+    width: 100px
 
   #btnLogOut
-    font-size: 13px;
+    font-size: 13px
 
   #btnHeader
-    align-self: center;
+    align-self: center
 </style>

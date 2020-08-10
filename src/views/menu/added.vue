@@ -1,12 +1,14 @@
 <template>
-  <div class="containerBreakfast">
-    <span class="titleBreakfast">ACOMPAÑAMIENTOS</span>
-    <div class="plate">
-      <main-plate :item="items[0]" :key="items[0].name"></main-plate>
-      <main-plate :item="items[1]" :key="items[1].name"></main-plate>
-    </div>
+  <div>
+    <span class="titleBtns">ACOMPAÑAMIENTOS</span>
     <div>
-      <btn title="Enviar a resumen"></btn>
+      <div class="plate">
+        <main-plate :item="items[0]" :key="items[0].name"></main-plate>
+        <main-plate :item="items[1]" :key="items[1].name"></main-plate>
+      </div>
+      <div class="containerResumeBtnExtras">
+        <btn title="Enviar a resumen"></btn>
+      </div>
     </div>
   </div>
 </template>
@@ -39,3 +41,9 @@ export default {
   }
 };
 </script>
+
+<style lang="sass">
+.containerResumeBtnExtras
+  display: grid
+  justify-content: center
+</style>

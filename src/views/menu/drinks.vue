@@ -1,13 +1,13 @@
 <template>
-  <div class="containerBreakfast">
-    <span class="titleBreakfast">BEBIDAS</span>
-    <div class="plate">
-      <main-plate :item="items[0]" :key="items[0].name"></main-plate>
-      <main-plate :item="items[1]" :key="items[1].name"></main-plate>
-      <main-plate :item="items[2]" :key="items[2].name"></main-plate>
-      <main-plate :item="items[3]" :key="items[3].name"></main-plate>
-    </div>
-    <div>
+  <div>
+    <span class="titleBtns">BEBIDAS</span>
+    <div class="containerBreakfast" id="drinks">
+      <div class="plate">
+        <main-plate :item="items[0]" :key="items[0].name"></main-plate>
+        <main-plate :item="items[1]" :key="items[1].name"></main-plate>
+        <main-plate :item="items[2]" :key="items[2].name"></main-plate>
+        <main-plate :item="items[3]" :key="items[3].name"></main-plate>
+      </div>
       <btn title="Enviar a resumen"></btn>
     </div>
   </div>
@@ -53,3 +53,11 @@ export default {
   }
 };
 </script>
+<style lang="sass">
+.titleDrinks
+  display: flex
+
+.positionBtnSend
+  display: flex
+  align-items: center
+</style>
