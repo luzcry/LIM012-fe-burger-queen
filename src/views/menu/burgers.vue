@@ -15,7 +15,7 @@
     <div class="typeBurgers">
       <typeBurgers></typeBurgers>
     </div>
-    <div>
+    <div class="containerBtnResumeBurger">
       <btn title="Enviar a resumen"></btn>
     </div>
   </div>
@@ -53,26 +53,33 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../../assets/scss/_variables";
+@import "../../assets/scss/_variables"
 
 .burgers
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+  display: flex
+  flex-direction: column
+  margin: 10px
 
 .burger
-  width: 70px;
-  display: flex;
-  align-items: center;
+  width: 70px
+  display: flex
+  align-items: center
 
 .titleburger
-  color: $color-font-green;
-  font-family: $secondaryFont;
-  font-size: 22px;
-  display: flex;
-  justify-content: center;
+  color: $color-font-green
+  font-family: $secondaryFont
+  font-size: 22px
+  display: flex
+  justify-content: center
+  text-align: center
+  margin: 8px
 
 .containerItems
-  grid-template-columns: 1fr 1fr;
-  display: grid;
+  grid-template-columns: 1fr 1fr
+  display: grid
+
+.containerBtnResumeBurger
+  display: flex
+  align-self: center
+  justify-content: center
 </style>

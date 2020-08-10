@@ -15,19 +15,19 @@ export default {
 };
 </script>
 <style lang="sass">
-@import "../../assets/scss/_variables";
+@import "../../assets/scss/_variables"
 
 .mainPlate
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 15px;
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin: 1rem
   color: $color-secondary-green
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  font-family: $basefont;
+  font-weight: bold
+  font-size: 18px
+  text-align: center
+  font-family: $basefont
 
 .imgItem
-  width: 65px;
+  width: 65px
 </style>

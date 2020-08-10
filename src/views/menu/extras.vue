@@ -34,7 +34,7 @@ export default {
 .imgExtras
   width: 65px;
   margin: 6px;
-  padding-left: 35px;
+  padding-left: 25px;
 
 
 #imgPlus

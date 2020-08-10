@@ -1,7 +1,7 @@
 <template>
   <div>
+    <span class="titleBtns">DESAYUNOS</span>
     <div class="containerBreakfast">
-      <span class="titleBreakfast">DESAYUNOS</span>
       <div class="plate">
         <main-plate :item="items[0]" :key="items[0].name"></main-plate>
         <main-plate :item="items[1]" :key="items[1].name"></main-plate>
@@ -9,7 +9,7 @@
         <main-plate :item="items[3]" :key="items[3].name"></main-plate>
       </div>
       <div>
-        <btn title="Enviar a resumen"></btn>
+        <button class="btnResume">Enviar a resumen</button>
       </div>
     </div>
   </div>
@@ -17,7 +17,6 @@
 
 <script>
 import mainPlate from "./mainPlate.vue";
-import btn from "../../components/btn.vue";
 
 const imgCoffee = require("@/assets/menu/coffee.svg");
 const imgSandwich = require("@/assets/menu/sandwich.svg");
@@ -26,7 +25,7 @@ const juice = require("@/assets/menu/juice.svg");
 
 export default {
   name: "breakfast",
-  components: { mainPlate, btn },
+  components: { mainPlate },
   data() {
     return {
       items: [
@@ -37,7 +36,7 @@ export default {
         },
         {
           img: imgSandwich,
-          name: "Sándwich de jamón y queso",
+          name: "Sándwich",
           price: "10"
         },
         {
@@ -57,20 +56,43 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../../assets/scss/_variables";
+@import "../../assets/scss/_variables"
 
 .containerBreakfast
-  display: flex;
-  flex-direction: column;
+  display: flex
+  flex-direction: column
+  align-items: center
 
 .plate
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid
+  grid-template-columns: 1fr 1fr
 
-.titleBreakfast
-  color: $color-font-green;
-  font-family: $secondaryFont;
-  margin: 1rem;
-  font-size: 22px;
-  align-self: center;
+.titleBtns
+  color: $color-font-green
+  font-family: $secondaryFont
+  margin: 1rem
+  font-size: 22px
+  display: flex
+  justify-content: center
+
+.btnResume
+  border: none
+  border-radius: 20px
+  padding: 10px
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  color: $color-pink
+  background-color: $color-light-pink
+  font-family: $secondaryFont
+  font-size: 18px
+  font-weight: bold
+  cursor: pointer
+
+.btnResume:focus
+  outline-color: transparent
+  outline-style: none
+
+.btnResume:active
+  outline-color: transparent
+  outline-style: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
 </style>
