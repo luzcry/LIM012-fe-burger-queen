@@ -30,4 +30,5 @@ export default {
 
 .imgItem
   width: 65px
+  padding-bottom: 5px
 </style>

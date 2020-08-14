@@ -50,49 +50,49 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../../assets/scss/_variables.scss";
+@import "../../assets/scss/_variables.scss"
 
 @media (min-width: 768px) and (max-width: 1280px)
 
   .listOfOrders
-    border: 2px $color-light-pink solid;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-    color: $color-font-green;
-    padding: 10px;
+    border: 2px $color-light-pink solid
+    margin-left: auto
+    margin-right: auto
+    width: 60%
+    color: $color-font-green
+    padding: 10px
 
   .titleList
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: $basefont;
+    display: flex
+    justify-content: center
+    margin-left: auto
+    margin-right: auto
+    font-family: $basefont
 
   .newOrderAdd
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    text-decoration: none;
-    cursor: pointer;
+    display: flex
+    justify-content: center
+    flex-direction: row
+    text-decoration: none
+    cursor: pointer
 
   #addImg
-    width: 55px;
-    margin: 1rem;
+    width: 55px
+    margin: 1rem
 
   .linkAdd
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: $color-font-green;
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-decoration: none
+    color: $color-font-green
 
   .order
-    font-size: 25px;
-    color: $color-font-green;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    font-size: 25px
+    color: $color-font-green
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
 </style>

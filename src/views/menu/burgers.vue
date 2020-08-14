@@ -18,7 +18,7 @@
       ></extras>
     </div>
     <div class="typeBurgers">
-      <typeBurgers></typeBurgers>
+      <typeBurgers @onClick="changeIndex" :protein="protein"></typeBurgers>
     </div>
     <div class="containerBtnResumeBurger">
       <btn @onClick="addToList" title="Enviar a resumen"></btn>
@@ -62,8 +62,13 @@ export default {
     };
   },
   methods: {
-    changeIndex: function(index) {
-      this.index = index;
+    changeIndex: function(protein) {
+      if (protein == this.protein) {
+        this.protein = 0;
+      } else {
+        this.protein = protein;
+        console.log(this.protein);
+      }
     },
     addBurger: function(index) {
       this.description = this.items[index].name;
@@ -104,6 +109,7 @@ export default {
   justify-content: center
   text-align: center
   margin: 8px
+  padding-right: 30px
 
 .containerItems
   grid-template-columns: 1fr 1fr

@@ -6,7 +6,9 @@
     <div id="types">
       <div
         class="eachType"
+        :class="protein == typeBurger.type ? 'typeActive' : 'typeInnactive'"
         v-for="typeBurger in typeBurgers"
+        v-on:click="changeIndex(typeBurger.type)"
         :key="typeBurger.name"
       >
         <img class="imgItem" :src="typeBurger.img" alt />
@@ -29,49 +31,63 @@ export default {
       typeBurgers: [
         {
           img: imgChickenBurger,
-          name: "Pollo"
+          name: "Pollo",
+          type: 1
         },
         {
           img: imgVeggieBurger,
-          name: "Veggie"
+          name: "Veggie",
+          type: 2
         },
         {
           img: imgMeatBurger,
-          name: "Carne"
+          name: "Carne",
+          type: 3
         }
       ]
     };
+  },
+  methods: {
+    changeIndex: function(index) {
+      this.$emit("onClick", index);
+    }
+  },
+  props: {
+    protein: Number
   }
 };
 </script>
 
 <style lang="sass">
-@import "../../assets/scss/_variables";
+@import "../../assets/scss/_variables"
 
 .titleTypesburgers
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+  display: flex
+  flex-direction: column
 
 #types
-  display: flex;
-  margin: 10px;
-  font-size: 18px;
+  display: flex
+  font-size: 18px
 
 .typeBurgers
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  color: $color-font-green;
+  display: flex
+  flex-direction: column
+  align-content: center
+  justify-content: center
+  color: $color-font-green
 
 .eachType
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 15px;
-  font-size: 18px;
+  display: flex
+  flex-direction: column
+  text-align: center
+  margin: 15px
+  font-size: 18px
   color: $color-secondary-green
-  font-weight: bold;
-  font-family: $basefont;
+  font-weight: bold
+  font-family: $basefont
+
+.typeActive
+  background-color: #fedae491
+  padding: 10px
+  border-radius: 50px
 </style>

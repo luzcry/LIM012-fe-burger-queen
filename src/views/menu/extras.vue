@@ -1,18 +1,12 @@
 <template>
   <div class="extras">
     <span class="titleburger">EXTRAS</span>
-    <div
-      class="hasCheese ? 'extraActive' : 'extraInnactive'"
-      v-on:click="onClickCheese"
-    >
+    <div :class="hasCheese ? 'extraActive' : 'extraInnactive'" v-on:click="onClickCheese">
       <img class="imgExtras" :src="imgCheese" alt />
       <img id="imgPlus" src="@/assets/menu/plus.svg" alt="plusLogo" />
       <img id="imgCoin" src="@/assets/menu/coin.svg" alt="coin" />
     </div>
-    <div
-      class="hasEgg ? 'extraActive' : 'extraInnactive'"
-      v-on:click="onClickEgg"
-    >
+    <div :class="hasEgg ? 'extraActive' : 'extraInnactive'" v-on:click="onClickEgg">
       <img class="imgExtras" :src="imgEgg" alt />
       <img id="imgPlus" src="@/assets/menu/plus.svg" alt="plusLogo" />
       <img id="imgCoin" src="@/assets/menu/coin.svg" alt="coin" />
@@ -39,39 +33,40 @@ export default {
   methods: {
     onClickCheese: function() {
       this.$emit("onClickCheese");
+      console.log(this.hasCheese);
     },
     onClickEgg: function() {
       this.$emit("onClickEgg");
+      console.log(this.hasEgg);
     }
   }
 };
 </script>
 
 <style lang="sass">
+@import "../../assets/scss/_variables"
 
 .extraActive
-  background-color: red;
-
-.extraInnactive
-  background-color: white;
+  background-color: #fedae491
+  width: 200px
+  border-radius: 50px
 
 .imgExtras
-  width: 65px;
-  margin: 6px;
-  padding-left: 25px;
-
+  width: 65px
+  margin: 6px
+  padding-left: 15px
 
 #imgPlus
-  margin-left: 9px;
-  margin-right: 10px;
+  margin-left: 9px
+  margin-right: 10px
 
 #imgCoin
-  width: 45px;
-  padding-top: 16px;
+  width: 45px
+  padding-top: 16px
 
 .extras
-  display: flex;
-  flex-direction: column;
-  padding-top: 5px;
-  margin-left: 10px;
+  display: flex
+  flex-direction: column
+  padding-top: 5px
+  margin-left: 10px
 </style>
