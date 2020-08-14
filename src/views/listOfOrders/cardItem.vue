@@ -25,7 +25,7 @@
         src="../../assets/listsOfOrders/checkmark.svg"
         alt="preparing"
       />
-      <div class="cardInfo">{{ order.numberOfOrder }} {{ order.status }}</div>
+      <div class="cardInfoList">{{ order.numberOfOrder }} {{ order.status }}</div>
     </div>
   </div>
 </template>
@@ -38,15 +38,18 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../../assets/scss/_variables.scss";
+@import "../../assets/scss/_variables.scss"
 
 @media (min-width: 768px) and (max-width: 1280px)
 
   .imgList
-    width: 40px;
-    padding: 1rem;
+    width: 40px
+    padding: 1rem
 
   .imgInCard
-    display: flex;
-    align-items: center;
+    display: flex
+    align-items: center
+
+  .cardInfoList
+    font-family: $secondaryFont
 </style>
