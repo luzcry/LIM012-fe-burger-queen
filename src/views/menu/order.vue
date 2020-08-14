@@ -3,9 +3,17 @@
     <span>{{ order.description }}</span>
     <span>{{ order.price }}</span>
     <div>
-      <img class="cuantityIcons" src="../../assets/menu/minusQuantity.svg" alt="minus" />
+      <img
+        class="cuantityIcons"
+        src="../../assets/menu/minusQuantity.svg"
+        alt="minus"
+      />
       <span>{{ order.cuantity }}</span>
-      <img class="cuantityIcons" src="../../assets/menu/addQuantity.svg" alt="plus" />
+      <img
+        class="cuantityIcons"
+        src="../../assets/menu/addQuantity.svg"
+        alt="plus"
+      />
     </div>
     <img id="deleteIcon" src="../../assets/menu/trash.svg" alt="delete" />
   </div>

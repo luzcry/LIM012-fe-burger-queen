@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 <template>
   <div>
     <top-header :isActive="true" title="MENÚ"></top-header>
@@ -27,19 +28,30 @@ export default {
           description: "hamburguesa simple pollo",
           price: 20,
           cuantity: 1,
-          hasEgg: Boolean,
-          hasCheesse: Boolean
+          hasEgg: true,
+          hasCheesse: false
         },
         {
           description: "hamburguesa doble carne",
           price: 20,
           cuantity: 1,
-          hasEgg: Boolean,
-          hasCheesse: Boolean
+          hasEgg: false,
+          hasCheesse: true
         }
       ]
     };
   }
+  /*methods: {
+    addItem: function() {
+      let item = {
+        description: "hamburguesa doble carne",
+        price: 20,
+        cuantity: 1,
+        hasEgg: false,
+        hasCheesse: true
+      };
+    }
+  }*/
 };
 </script>
 

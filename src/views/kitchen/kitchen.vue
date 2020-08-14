@@ -18,7 +18,7 @@
           alt="making"
         />
       </div>
-      <div v-on:click="changeIndex(3)" class="orders" id="ready">
+      <div v-on:click="changeIndex(2)" class="orders" id="ready">
         <span>PEDIDOS LISTOS PARA SERVIR</span>
         <img
           class="imgKitchen"
@@ -26,6 +26,8 @@
           alt="check"
         />
       </div>
+    </div>
+    <div id="listOrders">
       <list-orders v-if="index == 0" :list="pendingOrders"></list-orders>
       <list-orders v-if="index == 1" :list="makingOrders"></list-orders>
       <list-orders v-if="index == 2" :list="readyOrders"></list-orders>
@@ -48,20 +50,33 @@ export default {
       index: 0,
       makingOrders: [
         {
-          numberOfOrder: "mimi",
-          description: "En espera"
+          numberOfOrder: "Pedido n° 5",
+          description: "preparando",
+          orderMaking: "15:00"
+        },
+        {
+          numberOfOrder: "Pedido n° 6",
+          description: "preparando",
+          orderMaking: "15:30"
         }
       ],
       readyOrders: [
         {
-          numberOfOrder: "Pedido ",
-          description: "En espera"
+          numberOfOrder: "Pedido n°7",
+          description: "Listo para servir",
+          preparationTime: "20min"
+        },
+        {
+          numberOfOrder: "Pedido n°8",
+          description: "Listo para servir",
+          preparationTime: "10min"
         }
       ],
       pendingOrders: [
         {
           numberOfOrder: "Pedido n°1",
-          description: "1 hamburguesa simple de pollo"
+          description: "1 hamburguesa simple de pollo",
+          orderStart: "14:00"
         },
         {
           numberOfOrder: "Pedido n°2",
@@ -69,11 +84,13 @@ export default {
         },
         {
           numberOfOrder: "Pedido n°3",
-          description: "Listo para entregar"
+          description: "Listo para entregar",
+          orderStart: "14:00"
         },
         {
           numberOfOrder: "Pedido n°4",
-          description: "Entregado"
+          description: "Entregado",
+          orderStart: "14:00"
         }
       ]
     };
@@ -117,4 +134,8 @@ export default {
 
   .titleMenu
     font-family: $basefont
+
+  #listOrders
+    width: 450px;
+    padding: 10px;
 </style>

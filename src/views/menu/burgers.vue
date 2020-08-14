@@ -10,13 +10,18 @@
       </div>
     </div>
     <div class="extras">
-      <extras></extras>
+      <extras
+        @onClickEgg="addEgg"
+        @onClickCheese="addCheese"
+        :hasCheese="hasCheese"
+        :hasEgg="hasEgg"
+      ></extras>
     </div>
     <div class="typeBurgers">
       <typeBurgers></typeBurgers>
     </div>
     <div class="containerBtnResumeBurger">
-      <btn title="Enviar a resumen"></btn>
+      <btn @onClick="addToList" title="Enviar a resumen"></btn>
     </div>
   </div>
 </template>
@@ -46,8 +51,34 @@ export default {
           name: "Hamburguesa Doble",
           price: "15"
         }
-      ]
+      ],
+      index: 0,
+      isSimple: false,
+      description: "",
+      price: 0,
+      hasEgg: false,
+      hasCheese: false,
+      protein: 0
     };
+  },
+  methods: {
+    changeIndex: function(index) {
+      this.index = index;
+    },
+    addBurger: function(index) {
+      this.description = this.items[index].name;
+      this.price = this.items[index].price;
+      this.isSimple = index == 0;
+    },
+    addCheese: function() {
+      this.hasCheese = !this.hasCheese;
+    },
+    addEgg: function() {
+      this.hasEgg = !this.hasEgg;
+    },
+    addToList: function() {
+      console.log(this.description, this.price, this.isSimple);
+    }
   }
 };
 </script>

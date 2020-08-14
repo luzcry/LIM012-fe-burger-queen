@@ -4,7 +4,7 @@
     <div class="containerOrder">
       <div class="newOrder">
         <img src="../../assets/newOrder/newOrder.svg" alt="newOrder" />
-        <h1>Agregar nuevo pedido</h1>
+        <h1 id="titleNewOrder">Agregar nuevo pedido</h1>
         <form class="formOrder" @submit.prevent="pressed">
           <input
             class="input"
@@ -48,6 +48,9 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+
+  #titleNewOrder
+    font-family: $basefont;
 
   .formOrder
     display: flex;

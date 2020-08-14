@@ -8,7 +8,9 @@
         <p class="eachTitleResume">Cantidad</p>
       </div>
     </div>
-    <order v-for="order in orders" :order="order" :key="order.description">{{ order }}</order>
+    <order v-for="order in orders" :order="order" :key="order.description">{{
+      order
+    }}</order>
   </div>
 </template>
 

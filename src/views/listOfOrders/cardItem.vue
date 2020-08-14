@@ -49,4 +49,7 @@ export default {
   .imgInCard
     display: flex;
     align-items: center;
+
+  .cardInfo
+    font-family: $secondaryFont;
 </style>
