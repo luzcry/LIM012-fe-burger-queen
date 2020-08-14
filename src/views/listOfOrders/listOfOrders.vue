@@ -12,11 +12,7 @@
     </div>
     <div class="newOrderAdd">
       <router-link class="linkAdd" to="/newOrder">
-        <img
-          id="addImg"
-          src="../../assets/listsOfOrders/addNew.svg"
-          alt="addNewOrder"
-        />
+        <img id="addImg" src="../../assets/listsOfOrders/addNew.svg" alt="addNewOrder" />
         <span>Agregar nuevo pedido</span>
       </router-link>
     </div>
@@ -64,12 +60,14 @@ export default {
     margin-right: auto;
     width: 60%;
     color: $color-font-green;
+    padding: 10px;
 
   .titleList
     display: flex;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: $basefont;
 
   .newOrderAdd
     display: flex;

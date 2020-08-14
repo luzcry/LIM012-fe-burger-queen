@@ -50,6 +50,6 @@ export default {
     display: flex
     align-items: center
 
-  .cardInfoList
+  .cardInfo
     font-family: $secondaryFont
 </style>

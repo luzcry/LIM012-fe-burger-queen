@@ -36,7 +36,7 @@ export default {
         },
         {
           img: imgSandwich,
-          name: "Sándwich de jamón y queso",
+          name: "Sándwich",
           price: "10"
         },
         {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 <template>
   <div>
     <top-header :isActive="true" title="MENÚ"></top-header>
@@ -6,7 +7,7 @@
         <btns-menu></btns-menu>
       </div>
       <div class="containerResume">
-        <resume-order></resume-order>
+        <resume-order :orders="orders"></resume-order>
       </div>
     </div>
   </div>
@@ -19,7 +20,38 @@ import resumeOrder from "./resumeOrder.vue";
 
 export default {
   name: "menu",
-  components: { "top-header": topheader, btnsMenu, resumeOrder }
+  components: { "top-header": topheader, btnsMenu, resumeOrder },
+  data() {
+    return {
+      orders: [
+        {
+          description: "hamburguesa simple pollo",
+          price: 20,
+          cuantity: 1,
+          hasEgg: true,
+          hasCheesse: false
+        },
+        {
+          description: "hamburguesa doble carne",
+          price: 20,
+          cuantity: 1,
+          hasEgg: false,
+          hasCheesse: true
+        }
+      ]
+    };
+  }
+  /*methods: {
+    addItem: function() {
+      let item = {
+        description: "hamburguesa doble carne",
+        price: 20,
+        cuantity: 1,
+        hasEgg: false,
+        hasCheesse: true
+      };
+    }
+  }*/
 };
 </script>
 

@@ -1,8 +1,19 @@
 <template>
   <div class="extras">
     <span class="titleburger">EXTRAS</span>
-    <div v-for="extra in extras" :key="extra.mainImg">
-      <img class="imgExtras" :src="extra.mainImg" alt />
+    <div
+      class="hasCheese ? 'extraActive' : 'extraInnactive'"
+      v-on:click="onClickCheese"
+    >
+      <img class="imgExtras" :src="imgCheese" alt />
+      <img id="imgPlus" src="@/assets/menu/plus.svg" alt="plusLogo" />
+      <img id="imgCoin" src="@/assets/menu/coin.svg" alt="coin" />
+    </div>
+    <div
+      class="hasEgg ? 'extraActive' : 'extraInnactive'"
+      v-on:click="onClickEgg"
+    >
+      <img class="imgExtras" :src="imgEgg" alt />
       <img id="imgPlus" src="@/assets/menu/plus.svg" alt="plusLogo" />
       <img id="imgCoin" src="@/assets/menu/coin.svg" alt="coin" />
     </div>
@@ -17,24 +28,37 @@ export default {
   name: "extras",
   data() {
     return {
-      extras: [
-        {
-          mainImg: imgCheese
-        },
-        {
-          mainImg: imgEgg
-        }
-      ]
+      imgCheese,
+      imgEgg
     };
+  },
+  props: {
+    hasCheese: Boolean,
+    hasEgg: Boolean
+  },
+  methods: {
+    onClickCheese: function() {
+      this.$emit("onClickCheese");
+    },
+    onClickEgg: function() {
+      this.$emit("onClickEgg");
+    }
   }
 };
 </script>
 
 <style lang="sass">
+
+.extraActive
+  background-color: red;
+
+.extraInnactive
+  background-color: white;
+
 .imgExtras
   width: 65px;
   margin: 6px;
-  padding-left: 35px;
+  padding-left: 25px;
 
 
 #imgPlus
