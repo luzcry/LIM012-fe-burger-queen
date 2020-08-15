@@ -8,7 +8,7 @@
       <btn @onClick="changeIndex(2)" title="Acompañamientos"></btn>
       <btn @onClick="changeIndex(3)" title="Bebidas"></btn>
     </div>
-    <breakfast v-if="index == 0"></breakfast>
+    <breakfast @onClick="changeIndex" v-if="index == 0"></breakfast>
     <burgers v-if="index == 1"></burgers>
     <added v-if="index == 2"></added>
     <drinks v-if="index == 3"></drinks>

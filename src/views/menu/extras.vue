@@ -33,11 +33,9 @@ export default {
   methods: {
     onClickCheese: function() {
       this.$emit("onClickCheese");
-      console.log(this.hasCheese);
     },
     onClickEgg: function() {
       this.$emit("onClickEgg");
-      console.log(this.hasEgg);
     }
   }
 };

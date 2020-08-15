@@ -5,8 +5,18 @@
         <span class="titleburger">HAMBURGUESAS</span>
       </div>
       <div class="burger">
-        <main-plate :item="items[0]" :key="items[0].name"></main-plate>
-        <main-plate :item="items[1]" :key="items[1].name"></main-plate>
+        <main-plate
+          @onClick="addBurger(0)"
+          :isActive="isSimple == 0"
+          :item="items[0]"
+          :key="items[0].name"
+        ></main-plate>
+        <main-plate
+          @onClick="addBurger(1)"
+          :isActive="isSimple == 1"
+          :item="items[1]"
+          :key="items[1].name"
+        ></main-plate>
       </div>
     </div>
     <div class="extras">
@@ -53,7 +63,7 @@ export default {
         }
       ],
       index: 0,
-      isSimple: false,
+      isSimple: 3,
       description: "",
       price: 0,
       hasEgg: false,
@@ -71,9 +81,15 @@ export default {
       }
     },
     addBurger: function(index) {
-      this.description = this.items[index].name;
-      this.price = this.items[index].price;
-      this.isSimple = index == 0;
+      if (index == this.isSimple) {
+        this.description = "";
+        this.price = 0;
+        this.isSimple = 3;
+      } else {
+        this.description = this.items[index].name;
+        this.price = this.items[index].price;
+        this.isSimple = index;
+      }
     },
     addCheese: function() {
       this.hasCheese = !this.hasCheese;

@@ -3,10 +3,10 @@
     <span class="titleBtns">DESAYUNOS</span>
     <div class="containerBreakfast">
       <div class="plate">
-        <main-plate :item="items[0]" :key="items[0].name"></main-plate>
-        <main-plate :item="items[1]" :key="items[1].name"></main-plate>
-        <main-plate :item="items[2]" :key="items[2].name"></main-plate>
-        <main-plate :item="items[3]" :key="items[3].name"></main-plate>
+        <main-plate v-on:click="changeIndex(0)" :item="items[0]" :key="items[0].name"></main-plate>
+        <main-plate v-on:click="changeIndex(1)" :item="items[1]" :key="items[1].name"></main-plate>
+        <main-plate v-on:click="changeIndex(2)" :item="items[2]" :key="items[2].name"></main-plate>
+        <main-plate v-on:click="changeIndex(3)" :item="items[3]" :key="items[3].name"></main-plate>
       </div>
       <div>
         <button class="btnResume">Enviar a resumen</button>
@@ -51,6 +51,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    changeIndex: function(index) {
+      this.$emit("onClick", index);
+    }
   }
 };
 </script>
