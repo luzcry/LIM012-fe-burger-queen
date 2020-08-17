@@ -31,7 +31,6 @@ export default {
   display: flex
   flex-direction: column
   align-items: center
-  margin: 1rem
   color: $color-secondary-green
   font-weight: bold
   font-size: 18px
@@ -43,7 +42,10 @@ export default {
   padding-bottom: 5px
 
 .plateActive
-  background-color: #fedae491
-  padding: 10px
-  border-radius: 50px
+  background-color: $color-light-pink
+  padding: 10px;
+  border-radius: 50%
+
+.plateInnactive
+  padding: 10px;
 </style>

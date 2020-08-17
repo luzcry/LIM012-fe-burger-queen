@@ -3,10 +3,30 @@
     <span class="titleBtns">DESAYUNOS</span>
     <div class="containerBreakfast">
       <div class="plate">
-        <main-plate v-on:click="changeIndex(0)" :item="items[0]" :key="items[0].name"></main-plate>
-        <main-plate v-on:click="changeIndex(1)" :item="items[1]" :key="items[1].name"></main-plate>
-        <main-plate v-on:click="changeIndex(2)" :item="items[2]" :key="items[2].name"></main-plate>
-        <main-plate v-on:click="changeIndex(3)" :item="items[3]" :key="items[3].name"></main-plate>
+        <main-plate
+          @onClick="changeIndex(0)"
+          :isActive="index == 0"
+          :item="items[0]"
+          :key="items[0].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(1)"
+          :isActive="index == 1"
+          :item="items[1]"
+          :key="items[1].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(2)"
+          :isActive="index == 2"
+          :item="items[2]"
+          :key="items[2].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(3)"
+          :isActive="index == 3"
+          :item="items[3]"
+          :key="items[3].name"
+        ></main-plate>
       </div>
       <div>
         <button class="btnResume">Enviar a resumen</button>
@@ -28,6 +48,7 @@ export default {
   components: { mainPlate },
   data() {
     return {
+      index: 4,
       items: [
         {
           img: imgCoffee,
@@ -46,7 +67,7 @@ export default {
         },
         {
           img: juice,
-          name: "Jugo de frutas natural",
+          name: "Jugo de frutas",
           price: "7"
         }
       ]
@@ -54,7 +75,12 @@ export default {
   },
   methods: {
     changeIndex: function(index) {
-      this.$emit("onClick", index);
+      if (index == this.index) {
+        this.index = 4;
+      } else {
+        this.index = index;
+        console.log(this.index);
+      }
     }
   }
 };
@@ -91,6 +117,7 @@ export default {
   font-size: 18px
   font-weight: bold
   cursor: pointer
+  margin: 1rem;
 
 .btnResume:focus
   outline-color: transparent

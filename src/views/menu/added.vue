@@ -3,8 +3,18 @@
     <span class="titleBtns">ACOMPAÑAMIENTOS</span>
     <div>
       <div class="plate">
-        <main-plate :item="items[0]" :key="items[0].name"></main-plate>
-        <main-plate :item="items[1]" :key="items[1].name"></main-plate>
+        <main-plate
+          @onClick="changeIndex(0)"
+          :isActive="index == 0"
+          :item="items[0]"
+          :key="items[0].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(1)"
+          :isActive="index == 1"
+          :item="items[1]"
+          :key="items[1].name"
+        ></main-plate>
       </div>
       <div class="containerResumeBtnExtras">
         <btn title="Enviar a resumen"></btn>
@@ -25,6 +35,7 @@ export default {
   components: { mainPlate, btn },
   data() {
     return {
+      index: 3,
       items: [
         {
           img: imgOnionRings,
@@ -38,6 +49,16 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    changeIndex: function(index) {
+      if (index == this.index) {
+        this.index = 3;
+      } else {
+        this.index = index;
+        console.log(this.index);
+      }
+    }
   }
 };
 </script>

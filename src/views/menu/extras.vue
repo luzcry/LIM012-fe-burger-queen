@@ -1,12 +1,18 @@
 <template>
   <div class="extras">
     <span class="titleburger">EXTRAS</span>
-    <div :class="hasCheese ? 'extraActive' : 'extraInnactive'" v-on:click="onClickCheese">
+    <div
+      :class="hasCheese ? 'extraActive' : 'extraInnactive'"
+      v-on:click="onClickCheese"
+    >
       <img class="imgExtras" :src="imgCheese" alt />
       <img id="imgPlus" src="@/assets/menu/plus.svg" alt="plusLogo" />
       <img id="imgCoin" src="@/assets/menu/coin.svg" alt="coin" />
     </div>
-    <div :class="hasEgg ? 'extraActive' : 'extraInnactive'" v-on:click="onClickEgg">
+    <div
+      :class="hasEgg ? 'extraActive' : 'extraInnactive'"
+      v-on:click="onClickEgg"
+    >
       <img class="imgExtras" :src="imgEgg" alt />
       <img id="imgPlus" src="@/assets/menu/plus.svg" alt="plusLogo" />
       <img id="imgCoin" src="@/assets/menu/coin.svg" alt="coin" />
@@ -45,7 +51,7 @@ export default {
 @import "../../assets/scss/_variables"
 
 .extraActive
-  background-color: #fedae491
+  background-color: $color-light-pink
   width: 200px
   border-radius: 50px
 

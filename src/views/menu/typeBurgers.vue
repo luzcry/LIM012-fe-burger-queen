@@ -87,7 +87,10 @@ export default {
   font-family: $basefont
 
 .typeActive
-  background-color: #fedae491
-  padding: 10px
+  background-color: $color-light-pink
+  padding: 10px;
   border-radius: 50px
+
+.typeInnactive
+  padding: 10px;
 </style>

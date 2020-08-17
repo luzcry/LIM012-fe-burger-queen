@@ -3,10 +3,30 @@
     <span class="titleBtns">BEBIDAS</span>
     <div class="containerBreakfast" id="drinks">
       <div class="plate">
-        <main-plate :item="items[0]" :key="items[0].name"></main-plate>
-        <main-plate :item="items[1]" :key="items[1].name"></main-plate>
-        <main-plate :item="items[2]" :key="items[2].name"></main-plate>
-        <main-plate :item="items[3]" :key="items[3].name"></main-plate>
+        <main-plate
+          @onClick="changeIndex(0)"
+          :isActive="index == 0"
+          :item="items[0]"
+          :key="items[0].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(1)"
+          :isActive="index == 1"
+          :item="items[1]"
+          :key="items[1].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(2)"
+          :isActive="index == 2"
+          :item="items[2]"
+          :key="items[2].name"
+        ></main-plate>
+        <main-plate
+          @onClick="changeIndex(3)"
+          :isActive="index == 3"
+          :item="items[3]"
+          :key="items[3].name"
+        ></main-plate>
       </div>
       <btn title="Enviar a resumen"></btn>
     </div>
@@ -27,6 +47,7 @@ export default {
   components: { mainPlate, btn },
   data() {
     return {
+      index: 5,
       items: [
         {
           img: imgSodaCan,
@@ -50,6 +71,16 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    changeIndex: function(index) {
+      if (index == this.index) {
+        this.index = 5;
+      } else {
+        this.index = index;
+        console.log(this.index);
+      }
+    }
   }
 };
 </script>
