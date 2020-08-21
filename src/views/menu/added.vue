@@ -17,7 +17,7 @@
         ></main-plate>
       </div>
       <div class="containerResumeBtnExtras">
-        <btn title="Enviar a resumen"></btn>
+        <button class="btnResume">Enviar a resumen</button>
       </div>
     </div>
   </div>
@@ -25,14 +25,13 @@
 
 <script>
 import mainPlate from "./mainPlate.vue";
-import btn from "../../components/btn.vue";
 
 const imgOnionRings = require("@/assets/menu/onion.svg");
 const imgFries = require("@/assets/menu/fried-potatoes.svg");
 
 export default {
   name: "added",
-  components: { mainPlate, btn },
+  components: { mainPlate },
   data() {
     return {
       index: 3,

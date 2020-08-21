@@ -4,7 +4,7 @@
     <top-header :isActive="true" title="MENÚ"></top-header>
     <div class="containerMenu">
       <div>
-        <btns-menu></btns-menu>
+        <btns-menu @addToList="addBurger"></btns-menu>
       </div>
       <div class="containerResume">
         <resume-order :orders="orders"></resume-order>
@@ -40,18 +40,13 @@ export default {
         }
       ]
     };
-  }
-  /*methods: {
-    addItem: function() {
-      let item = {
-        description: "hamburguesa doble carne",
-        price: 20,
-        cuantity: 1,
-        hasEgg: false,
-        hasCheesse: true
-      };
+  },
+  methods: {
+    addBurger: function(item) {
+      console.log("addBurger");
+      this.orders = [...this.orders, item];
     }
-  }*/
+  }
 };
 </script>
 

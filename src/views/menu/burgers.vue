@@ -62,7 +62,6 @@ export default {
           price: "15"
         }
       ],
-      index: 0,
       isSimple: 3,
       description: "",
       price: 0,
@@ -90,6 +89,7 @@ export default {
         this.price = this.items[index].price;
         this.isSimple = index;
       }
+      console.log(this.description);
     },
     addCheese: function() {
       this.hasCheese = !this.hasCheese;
@@ -98,7 +98,16 @@ export default {
       this.hasEgg = !this.hasEgg;
     },
     addToList: function() {
-      console.log(this.description, this.price, this.isSimple);
+      const proteinName =
+        this.protein == 1 ? "Pollo" : this.protein == 2 ? "Veggie" : "Carne";
+      const newName = this.description + " " + proteinName;
+      const item = {
+        description: newName,
+        price: this.price,
+        hasCheese: this.hasCheese,
+        hasEgg: this.hasEgg
+      };
+      this.$parent.$emit("addToList", item);
     }
   }
 };

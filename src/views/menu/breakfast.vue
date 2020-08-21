@@ -81,6 +81,11 @@ export default {
         this.index = index;
         console.log(this.index);
       }
+    },
+    sendToRensume: function() {
+      if (this.index != 4) {
+        this.$emit("addBreakfast", this.items[this.index]);
+      }
     }
   }
 };
